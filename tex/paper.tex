@@ -1,0 +1,56 @@
+\documentclass[preprint2]{aastex}
+
+%include any extra packages you need here
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=./}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+
+\begin{document}
+  %frontmatter
+  \title{A Sample Article That is Very Reproducible}
+  \author{A. N. Author}
+  \affil{Top University, 200 Collegiate Ave., Washington, DC 20009, USA}
+  \author{B. Scientist}
+  \affil{Another College, 42 Smith St., Houston, TX 77005, USA}
+  \and
+  \author{C. Engineer}
+  \affil{Smaller University, 1 Infinite Loop, Cupertino, CA 95014, USA}
+  %abstract
+  \begin{abstract}
+    \blindtext
+  \end{abstract}
+  %body
+  \section{Introduction}
+  \blindtext
+  \begin{figure}
+    \plotone{../results/static/cost.eps}
+    \caption{This is the caption of a figure that is not generated on the fly. We should place these papers in \texttt{results/static}. These might include figures that we did not generate ourselves or figures that take too long to build automatically.}
+  \end{figure}
+  \blindtext
+  \section{Methodology}
+  \Blindtext
+  %\input{results/sample_table.tex}
+  \section{Results}
+  \Blindtext
+  \begin{figure}
+    %\plotone{}
+    \caption{This is a figure that is generated on the fly by a Jupyter notebook using \texttt{nbflow}.}
+  \end{figure}
+  \blindtext
+  \begin{figure*}
+    %\plottwo{}{}
+    \caption{Here is another figure that is generated at build time. It has two panels. Note the \texttt{\textbackslash plotone} and \texttt{\textbackslash plottwo} commands that are provided by AAS\TeX.}
+  \end{figure*}
+  \blindtext
+  \section{Conclusion}
+  \Blindtext
+  % acknowledgments
+  \acknowledgments
+  Here acknowledge some people, but mostly our funding sources
+  % software acknowledgments
+  \software{IPython, matplotlib, NumPy, SciPy}
+  % bibliography
+  \bibliography{local_references.bib}
+  \bibliographystyle{aasjournal}
+\end{document}
