@@ -30,19 +30,16 @@
   \blindtext
   \section{Methodology}
   \Blindtext
-  %\input{results/sample_table.tex}
-  \section{Results}
-  \Blindtext
   \begin{figure}
-    %\plotone{}
+    \plotone{../results/sample_math_plot.pdf}
     \caption{This is a figure that is generated on the fly by a Jupyter notebook using \texttt{nbflow}.}
   \end{figure}
-  \blindtext
+  %\input{results/sample_table.tex}
+  \section{Results}
   \begin{figure*}
-    %\plottwo{}{}
+    \plottwo{../results/sample_sim_plot.pdf}{../results/sample_exp_plot.pdf}
     \caption{Here is another figure that is generated at build time. It has two panels. Note the \texttt{\textbackslash plotone} and \texttt{\textbackslash plottwo} commands that are provided by AAS\TeX.}
   \end{figure*}
-  \blindtext
   \section{Conclusion}
   \Blindtext
   % acknowledgments
