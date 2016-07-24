@@ -1,3 +1,8 @@
+## Project-specific ignores
+site/output
+results/*
+!results/static/
+
 ## Python
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -110,6 +115,7 @@ ENV/
 *.ps
 *.eps
 *.pdf
+# whitelist anything not built on the fly
 !results/static/*.pdf
 !results/static/*.ps
 !results/static/*.eps
