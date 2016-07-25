@@ -8,7 +8,7 @@ branches:
 before_install:
 - mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz| tar -JxC $HOME/texlive
 - sudo apt-get update -qq
-- sudo apt-get install -y libblas-dev liblapack-dev
+- sudo apt-get install -y libblas-dev liblapack-dev gfortran
 install:
 - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
 - pip install -r requirements.txt
