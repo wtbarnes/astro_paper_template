@@ -1,10 +1,18 @@
 title: A Sample Article That is Very Reproducible
 abstract: This is a sample paper produced using some great tools like nbflow and services like Travis CI and GitHub. The figures are produced using Jupyter notebooks and the text is written in TeX. The templates used are from AAS, but in principle, any sort of TeX template can be used. Put a nice summary of your paper here.
 repo: wtbarnes/astro_paper_template
+pub_url: "#"
 authors:
   - name: A. N. Author
     affiliation: Top University
+    contact:
+      github: "#"
+      twitter: "#"
+      mail: "#"
   - name: B. Scientist
     affiliation: Another College
+    contact:
   - name: C. Engineer
     affiliation: Smaller University
+    contact:
+      mail: "#"

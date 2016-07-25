@@ -3,6 +3,9 @@ site/output
 results/*
 !results/static/
 
+## Scons
+.sconsign.dblite
+
 ## Python
 # Byte-compiled / optimized / DLL files
 __pycache__/
