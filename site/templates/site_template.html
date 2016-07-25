@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <!-- Twitter Bootstrap via CDN -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Font Awesome icons CDN -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <!-- Custom stylesheet -->
+  <link href="stylesheets/custom.css" rel="stylesheet">
+  <title>{{ info.title }}</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="navbar navbar-static-top">
+      <ul class="nav navbar-nav">
+        <li><a href="https://github.com/{{ info.repo }}"><i class="fa fa-github fa-4x"></i></a></li>
+        <li><a href="https://github.com/{{ info.repo }}/issues"><i class="fa fa-comments-o fa-4x"></i></a></li>
+        <li><a href="{{ info.pub_url }}"><i class="fa fa-book fa-4x"></i></a></li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h1>{{ info.title }}</h1>
+        {% for a in info.authors %}
+        <h2>{{ a.name }} <small>{{ a.affiliation }}</small></h2>
+        <div class="row">
+          <!-- GitHub -->
+          {% if a.contact.github is defined %}
+          <div class="col-md-1"><a href="{{ a.contact.github }}"><i class="fa fa-github fa-2x"></i></a></div>
+          {% endif %}
+          <!-- Twitter -->
+          {% if a.contact.twitter is defined %}
+          <div class="col-md-1"><a href="{{ a.contact.twitter }}"><i class="fa fa-twitter fa-2x"></i></a></div>
+          {% endif %}
+          <!-- Mail -->
+          {% if a.contact.mail is defined %}
+          <div class="col-md-1"><a href="mailto:{{ a.contact.mail }}"><i class="fa fa-envelope fa-2x"></i></a></div>
+          {% endif %}
+        </div>
+        {% endfor %}
+        <p class="lead">{{ info.abstract }}</p>
+      </div>
+      <div class="col-md-6">
+        <!-- PDF Reader -->
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" src="{{ pdf_file }}"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container footer">
+    A reproducible and open workflow built with <a href="https://github.com/wtbarnes/astro_paper_template">astro_paper_template</a> using <a href="https://github.com/jhamrick/nbflow">nbflow</a> and <a href="http://journals.aas.org/authors/aastex.html">AASTeX</a>.
+    </div>
+  </div>
+</body>
+</html>
