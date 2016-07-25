@@ -1,0 +1,22 @@
+language: python
+python:
+- '2.7'
+sudo: required
+branches:
+  only:
+  - master
+before_install:
+- mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz| tar -JxC $HOME/texlive
+install:
+- PATH=$HOME/texlive/bin/x86_64-linux:$PATH
+- pip install -r requirements.txt
+- git clone https://github.com/jhamrick/nbflow.git && cd nbflow && python setup.py install && cd ..
+before_script:
+- scons
+- cd site && make && cd ..
+script:
+- ghp-import -m "Building site" -b gh-pages site/output
+- git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG} gh-pages
+env:
+  global:
+    secure: W6VU+NjeBY9A90+3R9aE2ktqxrCQBjI4LA2NbP9opVjx9pk0n+CTv4svvsY9SwtsBNAaMYSacKYVj7khVT/H3zYC+qfVCef32yhC7o2eeSusvnM4ows5DROqteMJGOyfD9LtLVr+SgZAGosax0HVdi6n5DLWzJiMbmtiu/S/zQ0f/T1zeDAAjPpFbVx3GXvkW4479HcvtzJxl1tjWbdJDxHBShX6WMugoTEzpVKNVs9wSpEo+kZikCZgIGAHPgOiY+NrSuPrpv4bE2O4daUWBloE2Wo+n+S39Ya6Cricl4lXLGNvSGH1NeM3rn3AbUWfe64Hp/uQ9DUZEsCha1bciuuXV7Qk7+Di+pv+oH5Fc+2ks8ge4MeKJO9GwmYvWanLEz5Wh1GAXe0K6ujplFBJJK3Chu7wdevnF7Lbr/47xJg6gXyQ1ms9QUYIUVP4MhD+tcAJB4TeOfZdQK4EGjcizbuFicyNpDuhGMFDTlWyfFlMD4whvo2Fpb4zQyUMTtOXp7uBjOjjsUcfCfWmuc/8A5jAgoHsrAZNRPCgy66EjiFDwd55GgomRZeHJUFFhth4CRebB8vo8lVK4X1Qs7ae9MnpL0si69BB3ah0jEivZ3yAdvK1dQpCKqNKuSeqnDT8Wl4684t5vVzxoj1OnXZBW4Q4Remfkc4b/VcduQAMyPw=
