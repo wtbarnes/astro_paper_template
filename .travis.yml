@@ -11,6 +11,7 @@ before_install:
 - sudo apt-get install -y libblas-dev liblapack-dev gfortran
 install:
 - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
+- tlmgr update --self
 - tlmgr install epstopdf
 - pip install -r requirements.txt
 - git clone https://github.com/jhamrick/nbflow.git && cd nbflow && python setup.py install && cd ..
