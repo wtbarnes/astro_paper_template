@@ -1,4 +1,6 @@
 # astro_paper_template
+[![Build Status](https://travis-ci.org/wtbarnes/astro_paper_template.svg?branch=master)](https://travis-ci.org/wtbarnes/astro_paper_template)
+
 This template serves as a starting point for papers being prepared for publication with [AAS](http://journals.aas.org/index.html) (e.g. Astronomy and Astrophysics, The Astrophysical Journal). The included `.cls` and `.bst` files are the most recent versions of [AASTeX](http://journals.aas.org/authors/aastex.html).
 
 In addition to providing some basic templates, the main purpose of this project is to encourage *reproducible workflows* coupled with manuscript preparation. In other words, given some experiment or simulation data files, anyone should be able to click a button and build your paper **from scratch**.
