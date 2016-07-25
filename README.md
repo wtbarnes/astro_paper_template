@@ -1,5 +1,6 @@
 # astro_paper_template
 [![Build Status](https://travis-ci.org/wtbarnes/astro_paper_template.svg?branch=master)](https://travis-ci.org/wtbarnes/astro_paper_template)
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/wtbarnes/astro_paper_template)
 
 As much a proof of concept as it is a template, this project combines the ideas of two existing projects, [nbflow](https://github.com/jhamrick/nbflow) and [gh-publisher](https://github.com/ewanmellor/gh-publisher), to allow others to openly produce publication-quality science with simple, reproducible workflows.
 
