@@ -22,20 +22,21 @@
   \end{abstract}
   %body
   \section{Introduction}
-  \blindtext
+  \Blindtext
   \begin{figure}
     \plotone{../results/static/cost.eps}
     \caption{This is the caption of a figure that is not generated on the fly. We should place these papers in \texttt{results/static}. These might include figures that we did not generate ourselves or figures that take too long to build automatically.}
   \end{figure}
-  \blindtext
   \section{Methodology}
-  \Blindtext
+  \blindtext
+  \input{../results/sample_table.tex}
+  \blindtext
   \begin{figure}
     \plotone{../results/sample_math_plot.pdf}
     \caption{This is a figure that is generated on the fly by a Jupyter notebook using \texttt{nbflow}.}
   \end{figure}
-  %\input{results/sample_table.tex}
   \section{Results}
+  \Blindtext
   \begin{figure*}
     \plottwo{../results/sample_sim_plot.pdf}{../results/sample_exp_plot.pdf}
     \caption{Here is another figure that is generated at build time. It has two panels. Note the \texttt{\textbackslash plotone} and \texttt{\textbackslash plottwo} commands that are provided by AAS\TeX.}
