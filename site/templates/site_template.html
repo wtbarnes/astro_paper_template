@@ -3,7 +3,7 @@
 <head>
   <!-- Twitter Bootstrap via CDN -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <!-- Font Awesome icons CDN -->
+  <!-- Font Awesome icons via CDN -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   <!-- Custom stylesheet -->
   <link href="stylesheets/custom.css" rel="stylesheet">
@@ -26,11 +26,11 @@
         <div class="row">
           <!-- GitHub -->
           {% if a.contact.github is defined %}
-          <div class="col-md-1"><a href="{{ a.contact.github }}"><i class="fa fa-github fa-2x"></i></a></div>
+          <div class="col-md-1"><a href="https://github.com/{{ a.contact.github }}"><i class="fa fa-github fa-2x"></i></a></div>
           {% endif %}
           <!-- Twitter -->
           {% if a.contact.twitter is defined %}
-          <div class="col-md-1"><a href="{{ a.contact.twitter }}"><i class="fa fa-twitter fa-2x"></i></a></div>
+          <div class="col-md-1"><a href="https://twitter.com/{{ a.contact.twitter }}"><i class="fa fa-twitter fa-2x"></i></a></div>
           {% endif %}
           <!-- Mail -->
           {% if a.contact.mail is defined %}
