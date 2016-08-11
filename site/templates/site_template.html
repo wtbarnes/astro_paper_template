@@ -24,6 +24,7 @@
         {% for a in info.authors %}
         <h2>{{ a.name }} <small>{{ a.affiliation }}</small></h2>
         <div class="row">
+          <div class="container">
           <!-- GitHub -->
           {% if a.contact.github is defined %}
           <div class="col-md-1"><a href="https://github.com/{{ a.contact.github }}"><i class="fa fa-github fa-2x"></i></a></div>
@@ -36,6 +37,7 @@
           {% if a.contact.mail is defined %}
           <div class="col-md-1"><a href="mailto:{{ a.contact.mail }}"><i class="fa fa-envelope fa-2x"></i></a></div>
           {% endif %}
+          </div>
         </div>
         {% endfor %}
         <p class="lead">{{ info.abstract }}</p>
@@ -48,10 +50,10 @@
       </div>
     </div>
   </div>
-  <div class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container footer">
+  <footer class="footer">
+    <div class="container">
     A reproducible and open workflow built with <a href="https://github.com/wtbarnes/astro_paper_template">astro_paper_template</a> using <a href="https://github.com/jhamrick/nbflow">nbflow</a> and <a href="http://journals.aas.org/authors/aastex.html">AASTeX</a>.
     </div>
-  </div>
+  </footer>
 </body>
 </html>
